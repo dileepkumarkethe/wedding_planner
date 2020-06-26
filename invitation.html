@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weddingplant.com/home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="services.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script>
+		function openNav() {
+		  document.getElementById("mySidepanel").style.width = "250px";
+		}
+
+		function closeNav() {
+		  document.getElementById("mySidepanel").style.width = "0";
+		}
+
+		function display_c(){
+		var refresh=1000; // Refresh rate in milli seconds
+		mytime=setTimeout('display_ct()',refresh)
+		}
+
+		function display_ct() {
+		var x = new Date()
+		document.getElementById('ct').innerHTML = x;
+		display_c();
+		 }
+
+		 function openEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "300px";
+		}
+		 function closeInto() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		}
+		function closeEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		  alert("We got your request. we'll shortly resolve it. Thank you:");
+		}
+		// Validations
+		 function check() {
+        	var a;
+		    a=document.getElementById("t1").value;
+		    if(a == "")
+		    {
+		    	
+		    	alert("Please enter your Name");
+		        return false;
+		    }
+		    if(a.length<4)
+		    {
+		        alert("Enter valid Name");
+		        return false;
+	      	}
+	      	var b = document.getElementById("t2").value;
+
+	      	if(b == "")
+	      	{
+	      		alert("Please enter your phone number:");
+	      		return false;
+	      	}
+	      	if(b.length<10 || b.length>10)
+	      	{
+	      		alert("Please enter 10 digit phone number only:");
+	      		return false;
+	      	}
+	      	var c,x,y;
+	      	c=document.getElementById("t3").value; 
+	      	if(c=="")
+	      	{
+	          	alert("Please fill the E-Mail ID");
+	         	return false;
+	      	}
+	      	x=c.indexOf("@");
+	      	y=c.indexOf(".");
+	      	if(x<1)
+	      	{
+		        alert("@ is missing in your email id");
+		        return false;
+	      	}
+	      	if(y<1)
+	      	{
+		        alert(" .  is missing in your email id");
+		        return false;
+	      	}
+	      	if(y-x!=6)
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	if(c.length>y+2)
+	      	{;}
+	      	else
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	var d =  document.getElementById("t4").value;
+	      	if(d == "")
+	      	{
+	      		alert("Please enter your Enquiry in Message box:");
+	      		return false
+	      	}
+	      	if(a=="" && a.length<4 && b=="" && b.length<10 && b.length>10 && c=="" && x<1 && y<1 && y-x!=6)
+	      	{
+	      		alert("Please check your details:");
+	      	}else
+	      	{
+	      		closeEnquiry();
+	      	}
+	    }
+</script>
+<style type="text/css" media="screen">
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>
+</head> 
+
+<body onload="display_ct(), startSlide2(), startSlide3()";>
+	<div class="nav">
+			<marquee style="margin-right: 70%"><span class="time" id='ct' ></span></marquee>
+		<div class="cls1">
+			<a href="home.html"><img src="F:\INT 219 (Frontend)\Project(SEM 5)\images\logo_wedding2.png" alt="" width="210px" height="120px"></a>
+		</div>
+		<div class="cls2">
+			<ul>
+				<li><a href="home2.html">HOME</a></li>
+				<li><a href="#">SERVICES</a>
+					<ul>
+						<li><a href="venue.html">VENUE SELECTIONS</a></li><br>
+						<li><a href="invitation.html">INNOVATIVE INVITATIONS</a></li><br>
+						<li><a href="designing.html">DESIGNING</a></li><br>
+						<li><a href="catering.html">CATERING/RESTAURATION</a></li><br>
+						<li><a href="transform.html">TRANSPORTATION & LOGISTICS</a></li><br>
+						<li><a href="hospitality.html">HOSPITALITY & GUEST MANAGEMNET</a></li><br>
+						<li><a href="photograph.html">PHOTOGRAPHERS & VIDEOGRAPHERS</a></li><br>
+						<li><a href="entertain.html">ENTERTAINMENTS</a></li>
+					</ul>
+				</li>
+				<li><a href="#">DESTINATION WEDDING</a>
+					<ul>
+						<li><a href="in_india.html">DESTINATION IN INDIA</a></li><br>
+						<li><a href="out_india.html">DESTINATION OUT OF INDIA</a></li>
+					</ul>
+				</li>
+				<li><a href="career.html">CAREER</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br>
+
+	<div id="mySidepanel" class="sidepanel">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  	<a href="portfolio.html">PORTFOLIO</a>
+	  	<a href="home.html">LOGOUT</a>
+	</div>
+
+	<button class="openbtn" onclick="openNav()">☰</button>
+
+<!-- Quick Enquiry -->
+	<div id="myEnquiry" class="quick">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeInto()">×</a>
+	  	<div class="textbox">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input id="t1" type="text" name="Name" placeholder="NAME*" value="">
+		  </div>
+		  <div class="textbox">
+			<i class="fa fa-phone" aria-hidden="true"></i>
+			<input id="t2" type="number" name="phonenumber" placeholder="PHONE*" value="">
+		  </div>
+        <div class="textbox">
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>
+          	<input id="t3" type="text" name="email" placeholder="EMAIL*" value="">
+        </div>
+        <div style="margin-left: 20%;">
+        	<textarea id="t4" style="height: 100px; width: 185px;" name="message" placeholder="MESSAGE"></textarea>
+        </div>
+        <button class="btn" type="submit" onclick="check()">SEND MESSAGE</button>
+	</div>
+
+	<div class="rainbow">
+		<button class="openEnquiry" onclick="openEnquiry()"><p style="writing-mode: vertical-rl;">Quick Enquiry</p></button>
+	</div>
+
+<div class="container2">
+  <img src="F:\INT 219 (Frontend)\Project(SEM 5)\images\pngtree.jpg" alt="Rings" width="100%" height="220px">
+  <p class="centered2">INNOVATIVE INVITATION</p>
+</div>
+<br><br>
+<div class="division">
+	<div class="column">
+			<p class="para1">Being a host, one has to send invitation cards to the guest for the very special day of your life. The invitation card should be such that it depicts occurrence of your wedding related programs in sequential order.</p>
+			<p class="para2">The invitation should be simple, sober and at the same time attractive. It can possess date wise details of programs, names of near and dear ones, contact information. Even online invites are also sent apart from cards.</p>
+	</div>
+	<div class="column">
+		<img class="slideshow2" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\invitations\50006-AXDGPD_12X18_0113-p.png" id="img2" width="320px" height="280px">
+    
+	    <script>
+	        var id2;
+	        var j=1;
+	        const imagePath2=['F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/50006-AXDGPD_12X18_0113-p.png' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/aff7c684641.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/maxresdefault (2).jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/maxresdefault (1).jpg' ,'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/1f4ac47053a6011.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/691c1c057ace.jpg'];
+	        function changeImage2(){
+	            document.getElementById("img2").src=imagePath2[j];
+
+	            if(j<imagePath2.length-1)
+	            {   
+	                j++;
+	            }
+	            else
+	            {
+	                j=0;
+	            }
+	        }
+
+	        function startSlide2()
+	        {
+	            id2=setInterval(changeImage2,3000)
+	        }
+	    </script>	
+	</div>
+</div>
+<br>
+
+<div class="division">
+	<div class="column">
+			<p class="para1">What matters the most, is the look, feel, embellishments, choice of words which speaks the personality of the host sending the card. Whether you want an elegant one page handmade paper card or a mini booklet, or a card with zardozi or kundan work, or a card with embroidered tissue with favorite color schemes, can all be designed by us.</p>
+			<p class="para2">They also come fancifully in silk, leather, brocade or even silver. Even you can design your card according to the theme of your wedding.</p>
+	</div>
+	<div class="column">
+		<img class="slideshow2" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\invitations\1471952521_RR_944.webp" id="img3" width="320px" height="280px">
+    
+	    <script>
+	        var id3;
+	        var k=1;
+	        const imagePath3=['F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/1471952521_RR_944.webp' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/vintage-gold-line-luxury.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/1448035551_wedding.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/vintage-gold-line.jpg' ,'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/vintage-gold-line-luxury.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/invitations/vintage-gold.jpg'];
+	        function changeImage3(){
+	            document.getElementById("img3").src=imagePath3[j];
+
+	            if(k<imagePath3.length-1)
+	            {   
+	                k++;
+	            }
+	            else
+	            {
+	                k=0;
+	            }
+	        }
+
+	        function startSlide3()
+	        {
+	            id3=setInterval(changeImage3,3000)
+	        }
+	    </script>	
+	</div>
+</div>
+<br>
+
+<div class="totop">
+		<a href="#"><img class="top" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\25730-4-previous.png" alt="toTop" width="50px" height="50px"></a>
+</div>
+
+
+<hr style="background-color: #DF8F1C; width: 90%; margin-top: 5%;">
+<br><br><br>
+
+<div class="social">
+	<p>SOCIAL MEDIA</p>
+</div>
+<div class="fb">
+	<a href="#" class="fa fa-facebook"></a>
+	<a href="#" class="fa fa-twitter"></a>
+	<a href="#" class="fa fa-google"></a>
+	<a href="#" class="fa fa-linkedin"></a>
+	<a href="#" class="fa fa-youtube"></a>
+	<a href="#" class="fa fa-instagram"></a>
+	<a href="#" class="fa fa-pinterest"></a>
+</div>
+<br><br><br><br><br><br>
+
+</body>
+</html>

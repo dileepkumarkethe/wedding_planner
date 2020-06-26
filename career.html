@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weddingplant.com/home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="services.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script>
+		function openNav() {
+		  document.getElementById("mySidepanel").style.width = "250px";
+		}
+
+		function closeNav() {
+		  document.getElementById("mySidepanel").style.width = "0";
+		}
+
+		function display_c(){
+		var refresh=1000; // Refresh rate in milli seconds
+		mytime=setTimeout('display_ct()',refresh)
+		}
+
+		function display_ct() {
+		var x = new Date()
+		document.getElementById('ct').innerHTML = x;
+		display_c();
+		 }
+
+		 function openEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "300px";
+		}
+		 function closeInto() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		}
+		function closeEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		  alert("We got your request. we'll shortly resolve it. Thank you:");
+		}
+		// Validations
+		 function check() {
+        	var a;
+		    a=document.getElementById("t1").value;
+		    if(a == "")
+		    {
+		    	
+		    	alert("Please enter your Name");
+		        return false;
+		    }
+		    if(a.length<4)
+		    {
+		        alert("Enter valid Name");
+		        return false;
+	      	}
+	      	var b = document.getElementById("t2").value;
+
+	      	if(b == "")
+	      	{
+	      		alert("Please enter your phone number:");
+	      		return false;
+	      	}
+	      	if(b.length<10 || b.length>10)
+	      	{
+	      		alert("Please enter 10 digit phone number only:");
+	      		return false;
+	      	}
+	      	var c,x,y;
+	      	c=document.getElementById("t3").value; 
+	      	if(c=="")
+	      	{
+	          	alert("Please fill the E-Mail ID");
+	         	return false;
+	      	}
+	      	x=c.indexOf("@");
+	      	y=c.indexOf(".");
+	      	if(x<1)
+	      	{
+		        alert("@ is missing in your email id");
+		        return false;
+	      	}
+	      	if(y<1)
+	      	{
+		        alert(" .  is missing in your email id");
+		        return false;
+	      	}
+	      	if(y-x!=6)
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	if(c.length>y+2)
+	      	{;}
+	      	else
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	var d =  document.getElementById("t4").value;
+	      	if(d == "")
+	      	{
+	      		alert("Please enter your Enquiry in Message box:");
+	      		return false
+	      	}
+	      	if(a=="" && a.length<4 && b=="" && b.length<10 && b.length>10 && c=="" && x<1 && y<1 && y-x!=6)
+	      	{
+	      		alert("Please check your details:");
+	      	}else
+	      	{
+	      		closeEnquiry();
+	      	}
+	    }
+
+
+	    function check2() {
+        	var g;
+		    g=document.getElementById("k1").value;
+		    if(g == "")
+		    {
+		    	
+		    	alert("Please enter your first name");
+		        return false;
+		    }
+		    if(g.length<4)
+		    {
+		        alert("Enter valid first name");
+		        return false;
+	      	}
+	      	var e;
+		    e=document.getElementById("k2").value;
+		    if(e == "")
+		    {
+		    	
+		    	alert("Please enter your last name");
+		        return false;
+		    }
+		    if(e.length<4)
+		    {
+		        alert("Enter valid last name");
+		        return false;
+	      	}
+	      	var h,i,j;
+	      	h=document.getElementById("k3").value; 
+	      	if(h=="")
+	      	{
+	          	alert("Please fill the E-Mail ID");
+	         	return false;
+	      	}
+	      	i=h.indexOf("@");
+	      	j=h.indexOf(".");
+	      	if(i<1)
+	      	{
+		        alert("@ is missing in your email id");
+		        return false;
+	      	}
+	      	if(j<1)
+	      	{
+		        alert(" .  is missing in your email id");
+		        return false;
+	      	}
+	      	if(j-i!=6)
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	if(h.length>j+2)
+	      	{;}
+	      	else
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	var n = document.getElementById("k4").value;
+
+	      	if(n == "")
+	      	{
+	      		alert("Please enter your phone number:");
+	      		return false;
+	      	}
+	      	if(n.length<10 || n.length>10)
+	      	{
+	      		alert("Please enter 10 digit phone number only:");
+	      		return false;
+	      	}
+	      	var m = document.getElementById("k5").value;
+	      	if(m == "")
+	      	{
+	      		alert("Please enter in Message box what you are expecting from this job:");
+	      		return false
+	      	}
+	      	var f;
+	      	f = document.getElementById("k6").value;
+	      	if(f == "")
+	      	{
+	      		alert("Please upload your CV:");
+	      		return false;
+	      	}
+	      	if(f=="" && g=="" && g.length<4 && n=="" && n.length<10 && n.length>10 && h=="" && i<1 && j<1 && j-i!=6 && m=="" && e=="" && e.length<4)
+	      	{
+	      		alert("Please fill all the fields/check your details:");
+	      	}else
+	      	{
+	      		alert("We got your profile. we'll shortly contact you. Thank you:");
+	      	}
+	    }
+</script>
+<style type="text/css" media="screen">
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>
+</head> 
+
+<body onload="display_ct(), startSlide2()";>
+	<div class="nav">
+			<marquee style="margin-right: 70%"><span class="time" id='ct' ></span></marquee>
+		<div class="cls1">
+			<a href="home.html"><img src="F:\INT 219 (Frontend)\Project(SEM 5)\images\logo_wedding2.png" alt="" width="210px" height="120px"></a>
+		</div>
+		<div class="cls2">
+			<ul>
+				<li><a href="home2.html">HOME</a></li>
+				<li><a href="#">SERVICES</a>
+					<ul>
+						<li><a href="venue.html">VENUE SELECTIONS</a></li><br>
+						<li><a href="invitation.html">INNOVATIVE INVITATIONS</a></li><br>
+						<li><a href="designing.html">DESIGNING</a></li><br>
+						<li><a href="catering.html">CATERING/RESTAURATION</a></li><br>
+						<li><a href="transform.html">TRANSPORTATION & LOGISTICS</a></li><br>
+						<li><a href="hospitality.html">HOSPITALITY & GUEST MANAGEMNET</a></li><br>
+						<li><a href="photograph.html">PHOTOGRAPHERS & VIDEOGRAPHERS</a></li><br>
+						<li><a href="entertain.html">ENTERTAINMENTS</a></li>
+					</ul>
+				</li>
+				<li><a href="#">DESTINATION WEDDING</a>
+					<ul>
+						<li><a href="in_india.html">DESTINATION IN INDIA</a></li><br>
+						<li><a href="out_india.html">DESTINATION OUT OF INDIA</a></li>
+					</ul>
+				</li>
+				<li><a href="career.html">CAREER</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br>
+
+	<div id="mySidepanel" class="sidepanel">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  	<a href="portfolio.html">PORTFOLIO</a>
+	  	<a href="home.html">LOGOUT</a>
+	</div>
+
+	<button class="openbtn" onclick="openNav()">☰</button>
+
+<!-- Quick Enquiry -->
+	<div id="myEnquiry" class="quick">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeInto()">×</a>
+	  	<div class="textbox">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input id="t1" type="text" name="Name" placeholder="NAME*" value="">
+		  </div>
+		  <div class="textbox">
+			<i class="fa fa-phone" aria-hidden="true"></i>
+			<input id="t2" type="number" name="phonenumber" placeholder="PHONE*" value="">
+		  </div>
+        <div class="textbox">
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>
+          	<input id="t3" type="text" name="email" placeholder="EMAIL*" value="">
+        </div>
+        <div style="margin-left: 20%;">
+        	<textarea id="t4" style="height: 100px; width: 185px;" name="message" placeholder="MESSAGE"></textarea>
+        </div>
+        <button class="btn" type="submit" onclick="check()">SEND MESSAGE</button>
+	</div>
+
+	<div class="rainbow">
+		<button class="openEnquiry" onclick="openEnquiry()"><p style="writing-mode: vertical-rl;">Quick Enquiry</p></button>
+	</div>
+
+<div class="container2">
+  <img src="F:\INT 219 (Frontend)\Project(SEM 5)\images\guest\shutterstock_252390910-min-1024x683.jpg" alt="Rings" width="100%" height="220px">
+  <p class="centered2">CAREER WITH US</p>
+</div>
+<br><br>
+
+<div class="div_career">
+	<div class="div1">
+		<h5>CLIENT SERVICING</h5>
+		<p class="para3">Posted on : October 2, 2019</p>
+		<p class="para3">Experience : More than 4 years</p>
+		<p class="para3">No of Post : 5</p>
+		<p class="para3">Remuneration - Best in the Industry</p>
+		<p class="para3">1. Smart, well educated (preference Female), having more than 4 years of work experience wherein he/she should have been interacting with the client from Start to Finish.</p>
+		<p class="para3">2. The person should be able to understand and gauge the client well so as to translate their vision effectively in tandem with the rest of the team.</p>
+		<p class="para3">3. Working closely on the creative to be delivered, preparing quotations for the work negotiating with the suppliers and vendors and impeccable monitoring of the project to make sure that costs stay within budgets form the main areas of responsibility.</p>
+		<p class="para3">4. During the non-peak seasons you are supposed to undertake research on upcoming wedding trends, new and exciting concepts for wedding décor, entertainment and talent that can be explored. You will also work towards enhancing PR and marketing activities for the division.</p>
+
+		<h5>SENIOR 3D DESIGNER</h5>
+		<p class="para3">Posted on : October 3, 2019</p>
+		<p class="para3">Experience : Minimum 3 years</p>
+		<p class="para3">No of Post : 1</p>
+		<p class="para3">Remuneration - Best in the Industry</p>
+		<p class="para3">1. A person should have the experience of minimum 3 years in wedding sets and exhibition designs and wherein he/she should have been interacting with the client.</p>
+		<p class="para3">2. He should have good knowledge about Corel draw, 3Dmax, Autocad and other latest designing software’s.</p>
+		<p class="para3">3. Have the ability to manage and coordinate work according to the timeliness given by the client.</p>
+		<p class="para3">4. Has the ability to develop concept & ideas according to the client thinking.</p>
+	</div>
+
+	<div class="div1">
+			<select class="select1">
+				<option value="">Application For---</option>
+				<option value="">CLIENT SERVICING</option>
+				<option value="">SENIOR 3D DESIGNER</option>}
+			</select><br><br>
+			<input id="k1" class="name1" type="text" name="firstname" placeholder="FIRST NAME">&nbsp&nbsp&nbsp&nbsp&nbsp
+			<input id="k2" class="name1" type="text" name="lastname" placeholder="LAST NAME"> <br><br>
+			<input id="k3" class="email" type="text" name="email" placeholder="EMAIL"><br><br>
+			<input id="k4" class="email" type="number" name="phone" placeholder="PHONE NO."><br><br>
+			<textarea id="k5" class="message1" name="message" placeholder="MESSAGE"></textarea>
+			<p style="font-size: 13px; color: #85827D;">(Maximum 200 words)</p><br>
+			<p style="font-size: 13px; color: #85827D;">Attach Your CV</p>
+			<input id="k6" type="file" name="cv">
+			<p style="font-size: 13px; color: #85827D;">(Your CV must be .doc, .docx, .pdf or .rtf and no bigger than 1 MB)</p>
+			<input style="width: 16px; height: 16px;" id="k7" type="checkbox"><span style="font-size: 13px; color: #85827D;">I agree to the terms and Conditions</span><br><br>
+			<div class="apply">
+				<button class="btn_apply" type="submit" onclick="check2()"><i class="fa fa-envelope-o" aria-hidden="true"></i>APPLY</button>
+			</div>
+			<div class="apply">
+				<a href="#"><button class="btn_apply" type="submit" onclick="check3()"><i class="fa fa-envelope-o" aria-hidden="true"></i>CANCEL</button></a>
+			</div>
+	</div>
+</div>
+
+<div class="totop">
+		<a href="#"><img class="top" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\25730-4-previous.png" alt="toTop" width="50px" height="50px"></a>
+</div>
+
+<hr style="background-color: #DF8F1C; width: 90%; margin-top: 5%;">
+<br><br><br>
+
+<div class="social">
+	<p>SOCIAL MEDIA</p>
+</div>
+<div class="fb">
+	<a href="#" class="fa fa-facebook"></a>
+	<a href="#" class="fa fa-twitter"></a>
+	<a href="#" class="fa fa-google"></a>
+	<a href="#" class="fa fa-linkedin"></a>
+	<a href="#" class="fa fa-youtube"></a>
+	<a href="#" class="fa fa-instagram"></a>
+	<a href="#" class="fa fa-pinterest"></a>
+</div>
+<br><br><br><br><br><br>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weddingplant.com/home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script>
+		function openNav() {
+		  document.getElementById("mySidepanel").style.width = "250px";
+		}
+
+		function closeNav() {
+		  document.getElementById("mySidepanel").style.width = "0";
+		}
+
+		function display_c(){
+		var refresh=1000; // Refresh rate in milli seconds
+		mytime=setTimeout('display_ct()',refresh)
+		}
+
+		function display_ct() {
+		var x = new Date()
+		document.getElementById('ct').innerHTML = x;
+		display_c();
+		 }
+
+		 function openEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "300px";
+		}
+		 function closeInto() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		}
+		function closeEnquiry() {
+		  document.getElementById("myEnquiry").style.width = "0";
+		  alert("We got your request. we'll shortly resolve it. Thank you:");
+		}
+		// Validations
+		 function check() {
+        	var a;
+		    a=document.getElementById("t1").value;
+		    if(a == "")
+		    {
+		    	
+		    	alert("Please enter your Name");
+		        return false;
+		    }
+		    if(a.length<4)
+		    {
+		        alert("Enter valid Name");
+		        return false;
+	      	}
+	      	var b = document.getElementById("t2").value;
+
+	      	if(b == "")
+	      	{
+	      		alert("Please enter your phone number:");
+	      		return false;
+	      	}
+	      	if(b.length<10 || b.length>10)
+	      	{
+	      		alert("Please enter 10 digit phone number only:");
+	      		return false;
+	      	}
+	      	var c,x,y;
+	      	c=document.getElementById("t3").value; 
+	      	if(c=="")
+	      	{
+	          	alert("Please fill the E-Mail ID");
+	         	return false;
+	      	}
+	      	x=c.indexOf("@");
+	      	y=c.indexOf(".");
+	      	if(x<1)
+	      	{
+		        alert("@ is missing in your email id");
+		        return false;
+	      	}
+	      	if(y<1)
+	      	{
+		        alert(" .  is missing in your email id");
+		        return false;
+	      	}
+	      	if(y-x!=6)
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	if(c.length>y+2)
+	      	{;}
+	      	else
+	      	{
+		        alert("Invalid E-Mail ID");
+		        return false;
+	      	}
+	      	var d =  document.getElementById("t4").value;
+	      	if(d == "")
+	      	{
+	      		alert("Please enter your Enquiry in Message box:");
+	      		return false
+	      	}
+	      	if(a=="" && a.length<4 && b=="" && b.length<10 && b.length>10 && c=="" && x<1 && y<1 && y-x!=6)
+	      	{
+	      		alert("Please check your details:");
+	      	}else
+	      	{
+	      		closeEnquiry();
+	      	}
+	    }
+</script>
+<style type="text/css" media="screen">
+	body {
+		margin: 0;
+		padding: 0;
+	}	
+</style>
+</head> 
+
+<body onload="display_ct(), startSlide(), startSlide2()";>
+	<div class="nav">
+			<marquee style="margin-right: 70%"><span class="time" id='ct' ></span></marquee>
+		<div class="cls1">
+			<a href="home.html"><img src="F:\INT 219 (Frontend)\Project(SEM 5)\images\logo_wedding2.png" alt="" width="210px" height="120px"></a>
+		</div>
+		<div class="cls2">
+			<ul>
+				<li><a href="home.html">HOME</a></li>
+				<li><a href="#">SERVICES</a>
+					<ul>
+						<li><a href="venue.html">VENUE SELECTIONS</a></li><br>
+						<li><a href="invitation.html">INNOVATIVE INVITATIONS</a></li><br>
+						<li><a href="designing.html">DESIGNING</a></li><br>
+						<li><a href="catering.html">CATERING/RESTAURATION</a></li><br>
+						<li><a href="transform.html">TRANSPORTATION & LOGISTICS</a></li><br>
+						<li><a href="hospitality.html">HOSPITALITY & GUEST MANAGEMNET</a></li><br>
+						<li><a href="photograph.html">PHOTOGRAPHERS & VIDEOGRAPHERS</a></li><br>
+						<li><a href="entertain.html">ENTERTAINMENTS</a></li>
+					</ul>
+				</li>
+				<li><a href="#">DESTINATION WEDDING</a>
+					<ul>
+						<li><a href="in_india.html">DESTINATION IN INDIA</a></li><br>
+						<li><a href="out_india.html">DESTINATION OUT OF INDIA</a></li>
+					</ul>
+				</li>
+				<li><a href="career.html">CAREER</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br>
+
+	<div id="mySidepanel" class="sidepanel">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  	<a href="portfolio.html">PORTFOLIO</a>
+	  	<a href="signup.html">SIGNUP</a>
+	  	<a href="signin.html">SIGNIN</a>
+	</div>
+
+	<button class="openbtn" onclick="openNav()">☰</button>
+
+<!-- Quick Enquiry -->
+	<div id="myEnquiry" class="quick">
+	  	<a href="javascript:void(0)" class="closebtn" onclick="closeInto()">×</a>
+	  	<div class="textbox">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input id="t1" type="text" name="Name" placeholder="NAME*" value="">
+		  </div>
+		  <div class="textbox">
+			<i class="fa fa-phone" aria-hidden="true"></i>
+			<input id="t2" type="number" name="phonenumber" placeholder="PHONE*" value="">
+		  </div>
+        <div class="textbox">
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>
+          	<input id="t3" type="text" name="email" placeholder="EMAIL*" value="">
+        </div>
+        <div style="margin-left: 20%;">
+        	<textarea id="t4" style="height: 100px; width: 185px;" name="message" placeholder="MESSAGE"></textarea>
+        </div>
+        <button class="btn" type="submit" onclick="check()">SEND MESSAGE</button>
+	</div>
+
+	<div class="rainbow">
+		<button class="openEnquiry" onclick="openEnquiry()"><p style="writing-mode: vertical-rl;">Quick Enquiry</p></button>
+	</div>
+
+<!-- Slide show  -->
+	<div>
+		<img class="slideshow" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\689286376.jpg" id="img1" width="1010px" height="450px">
+    
+    <script>
+        var id;
+        var i=1;
+        const imagePath=['F:/INT 219 (Frontend)/Project(SEM 5)/images/689286376.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/wp2599335.png', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/slide/wp2840694.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/38818422550_28f6b11097_b.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/1128636-amazing.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/slide/Seattle.jpg'];
+        function changeImage(){
+            document.getElementById("img1").src=imagePath[i];
+
+            if(i<imagePath.length-1)
+            {   
+                i++;
+            }
+            else
+            {
+                i=0;
+            }
+        }
+
+        function startSlide()
+        {
+            id=setInterval(changeImage,3000)
+        }
+    </script>	
+	</div>
+	<br><br>
+
+	<div class="totop">
+		<a href="#"><img class="top" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\25730-4-previous.png" alt="toTop" width="50px" height="50px"></a>
+	</div>
+
+	<h1 class="about">ABOUT</h1><br>
+
+	<div>
+		<h3>
+			<span style="color: orange;">I</span><span style="color: white;">N</span><span style="color: green;">D</span><span style="color: orange;">I</span><span style="color: white;">A</span><span style="color: green;">N</span>
+			<span style="color: orange;"> W</span><span style="color: white;">E</span><span style="color: green;">D</span><span style="color: orange;">D</span><span style="color: white;">I</span><span style="color: green;">N</span><span style="color: orange;">G</span>
+			<span style="color: white;">P</span><span style="color: green;">L</span><span style="color: orange;">A</span><span style="color: white;">N</span><span style="color: green;">N</span><span style="color: orange;">E</span><span style="color: white;">R</span>
+		</h3>	
+	</div>
+
+	<div class="division">
+		<div class="column">
+		<img class="slideshow2" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\wedding themes\Moon-Theme-Wedding-Stage.jpg" id="img2" width="500px" height="350px">
+    
+	    <script>
+	        var id2;
+	        var j=1;
+	        const imagePath2=['F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/Moon-Theme-Wedding-Stage.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/IMG_7692.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/Tan_and_Inna_Peach_Wedding_05.jpg' , 'F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/Wedding-Decor-Theme-16.11.jpg' ,'F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/starry-night.jpg', 'F:/INT 219 (Frontend)/Project(SEM 5)/images/wedding themes/destination.jpg'];
+	        function changeImage2(){
+	            document.getElementById("img2").src=imagePath2[j];
+
+	            if(j<imagePath2.length-1)
+	            {   
+	                j++;
+	            }
+	            else
+	            {
+	                j=0;
+	            }
+	        }
+
+	        function startSlide2()
+	        {
+	            id2=setInterval(changeImage2,3000)
+	        }
+	    </script>	
+		</div>
+
+		<div class="column">
+			<p class="para1">Indian Wedding Planners is a wedding planning service provider based in the city of Hyderabad. It is a boutique wedding planning company that would cater to any and every planning need of yours and create beautiful experiences for you and all of your guests where you would be able to forge happy and everlasting memories while cherishing them for life.</p>
+
+			<b>Services offered</b> <br><br>
+			<p class="services">Vendor management</p>
+			<p class="services">Event flow management</p>
+			<p class="services">Decor planning and execution</p>
+			<p class="services">Guests Management</p>
+			<p class="services">Entertainment design & choreography</p>
+			<p class="services">Food & beverage management</p>
+			<p class="services">Transport & logistics management</p>
+			<p class="services">Styling & personal shopper</p>
+		</div>
+	</div>
+<br>
+
+<hr style="background-color: #DF8F1C; width: 90%;">
+<br>
+
+<div class="feature">
+	<h1 class="featu">FEATURED WEDDINGS</h1>	
+</div>
+
+<div class="ntr">
+	<div class="div1">
+		<img class="b3" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\ntr weddding\virushka-770x433.webp" alt="" width="300px" height="270px">
+		<p>WEDDING FUNCTION OF VIRAT KOHLI & ANUSHKA SHARMA IN ITALY BY INDIAN WEDDING PLANNERS</p>
+	</div>
+	<div class="div1">
+		<img class="b3" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\ntr weddding\eb525.jpg" alt="" width="300px" height="270px">
+		<p>5-DAY WEDDING PLANNING BY INDIAN WEDDING PLANNERS. WEDDING OF JR NTR & LAKSHMI PRANATHI</p>
+	</div>
+	<div class="div1">
+		<img class="b3" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\ntr weddding\05divyanka-party4.jpg" alt="" width="300px" height="270px">
+		<p>WEDDING FUNCTION OF RAHUL SHARMA & VITHIKA IN DELHI</p>
+	</div>
+	<div class="div1">
+		<img class="b3" src="F:\INT 219 (Frontend)\Project(SEM 5)\images\ntr weddding\1535304072CHAN9403.jpg" alt="" width="300px" height="270px">
+		<p>3-DAY WEDDING PLANNING BY INDIAN WEDDING PLANNERS. WEDDING OF PRANEETH KUMAR & SWATHI</p>
+	</div>
+</div>
+
+<div class="complete">
+	<div class="div2">
+		<h2>99%</h2>
+		<p>CLIENT SATISFACTION</p>
+	</div>
+	<div class="div2">
+		<h2>1700</h2>
+		<p>CUPS OF COFFEE</p>
+	</div>
+	<div class="div2">
+		<h2>250</h2>
+		<p>WEDDING COMPLETED</p>
+	</div>
+	<div class="div2">
+		<h2>100</h2>
+		<p>SANGEET COMPLETED</p>
+	</div>
+	<div class="div2">
+		<h2>68</h2>
+		<p>BACHELOR DONE</p>
+	</div>
+</div>
+
+
+<hr style="background-color: #DF8F1C; width: 90%; margin-top: 50%;">
+<br><br><br>
+
+<div class="social">
+	<p>SOCIAL MEDIA</p>
+</div>
+<div class="fb">
+	<a href="#" class="fa fa-facebook"></a>
+	<a href="#" class="fa fa-twitter"></a>
+	<a href="#" class="fa fa-google"></a>
+	<a href="#" class="fa fa-linkedin"></a>
+	<a href="#" class="fa fa-youtube"></a>
+	<a href="#" class="fa fa-instagram"></a>
+	<a href="#" class="fa fa-pinterest"></a>
+</div>
+<br><br><br><br><br><br>
+
+</body>
+</html>
